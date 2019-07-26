@@ -1,5 +1,6 @@
 import React from 'react'
 import Terminal from 'terminal-in-react'
+//import Rivescript from 'Rivescript'
 
 const showMsg = () => 'Hello World'
 
@@ -22,7 +23,8 @@ function Game() {
         commands={{
           'open-google': () => window.open('https://www.google.com/', '_blank'),
           showmsg: showMsg,
-          popup: () => alert('Terminal in React')
+          popup: () => alert('Terminal in React'),
+          chat: () => startchatbot()
         }}
         actionHandlers={{
           handleClose: toggleClose => {
@@ -37,6 +39,7 @@ function Game() {
           'open-google': 'opens google.com',
           showmsg: 'shows a message',
           alert: 'alert',
+          chat: 'starts the chat bot',
           popup: 'alert'
         }}
         allowTabs={false}
@@ -44,6 +47,10 @@ function Game() {
       />
     </div>
   )
+}
+
+function startchatbot() {
+  alert('Chatbot has been started!')
 }
 
 export default Game
