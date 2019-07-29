@@ -58,7 +58,7 @@ function startchatbot() {
 //bot.loadDirectory("brain").then(loading_done).catch(loading_error);
 
 // Load an individual file.
-bot.loadFile("../brain/eliza.rive").then(loading_done).catch(loading_error);
+bot.loadFile("./eliza.rive").then(loading_done).catch(loading_error);
 
 // Load a list of files all at once (the best alternative to loadDirectory
 // for the web!)
@@ -73,7 +73,7 @@ bot.loadFile("../brain/eliza.rive").then(loading_done).catch(loading_error);
 // with multiple file names), the success function is called only when ALL
 // the files have finished loading.
 function loading_done() {
-  console.log("Bot has finished loading!");
+  //console.log("Bot has finished loading!");
   // Now the replies must be sorted!
   bot.sortReplies();
 
@@ -82,6 +82,7 @@ function loading_done() {
   // RiveScript remembers user data by their username and can tell
   // multiple users apart.
   let username = "local-user";
+
 
   // NOTE: the API has changed in v2.0.0 and returns a Promise now.
   bot.reply(username, "sorry!").then(function(reply) {
